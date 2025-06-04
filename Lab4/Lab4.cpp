@@ -1,4 +1,4 @@
-//Hello World Program.cpp -- prints "Hello World" to the screen.
+//Lab4.cpp -- calculates final grades from an input file
 //CSIS 111-02
 //Public Domain
 
