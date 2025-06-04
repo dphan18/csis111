@@ -12,16 +12,15 @@ using namespace std;
 int main(){
 
 	//declares variables
-	double avgTemp;
-	double t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12;
-	ofstream output;
-	ifstream input;
+        double avgTemp;
+        double t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12;
+        ifstream input;
 
 	//allows for 12 inputs to tempdata.dat
         cout << "Enter 12 temperatures separated by a space:" << endl;
-	cin >> t1>>t2>> t3>> t4>> t5>> t6>> t7>> t8>> t9>> t10>> t11>> t12;
-	output.open("tempdata.dat");
-	output << fixed << showpoint<<setprecision(1);
+        cin >> t1>>t2>> t3>> t4>> t5>> t6>> t7>> t8>> t9>> t10>> t11>> t12;
+        ofstream output("tempdata.dat");
+        output << fixed << showpoint<<setprecision(1);
 	output << setw(6) <<t1<<endl;
 	output << setw(6) << t2 << setw(10) << t2 - t1 << endl;
 	output << setw(6) << t3 << setw(10) << t3 - t2 << endl;
@@ -33,7 +32,8 @@ int main(){
 	output << setw(6) << t9 << setw(10) << t9 - t8 << endl;
 	output << setw(6) << t10 << setw(10) << t10 - t9 << endl;
 	output << setw(6) << t11 << setw(10) << t11 - t10 << endl;
-	output << setw(6) << t12 << setw(10) << t12 - t11 << endl;
+        output << setw(6) << t12 << setw(10) << t12 - t11 << endl;
+        output.close();
 
 	//calculates and prints average
 	avgTemp = (t1+ t2+t3+ t4+ t5+ t6+ t7+ t8+ t9+ t10+ t11+ t12) / 12;
