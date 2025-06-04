@@ -24,7 +24,15 @@ int main()
 
         input.open("John_Smith_Grade.txt");
         if(!input.is_open())
+        {
+                input.clear();
                 input.open("Lab4/John_Smith_Grade.txt");
+                if(!input.is_open())
+                {
+                        cerr << "Error: could not open input file." << endl;
+                        return 1;
+                }
+        }
         input >> student_score >> total_points;
         input.close();
 
