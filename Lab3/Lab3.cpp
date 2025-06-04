@@ -18,7 +18,7 @@ int main(){
 	ifstream input;
 
 	//allows for 12 inputs to tempdata.dat
-	cout << "Enter 12 temperatures seperated by a space:" << endl;
+        cout << "Enter 12 temperatures separated by a space:" << endl;
 	cin >> t1>>t2>> t3>> t4>> t5>> t6>> t7>> t8>> t9>> t10>> t11>> t12;
 	output.open("tempdata.dat");
 	output << fixed << showpoint<<setprecision(1);
