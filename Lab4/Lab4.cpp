@@ -22,9 +22,11 @@ int main()
 	int final_score_whole;
 	ifstream input;
 
-	input.open("John_Smith_Grade.txt");
-	input >> student_score >> total_points;
-	input.close();
+        input.open("John_Smith_Grade.txt");
+        if(!input.is_open())
+                input.open("Lab4/John_Smith_Grade.txt");
+        input >> student_score >> total_points;
+        input.close();
 
 	final_score = student_score / total_points * 100;
 	cout << fixed << showpoint << setprecision(5) 
@@ -32,16 +34,16 @@ int main()
 	final_score_whole= (int) ceil(final_score);
 	cout <<"Rounded Result: "<<final_score_whole<<"%"<< endl;
 
-	if (final_score_whole > 90)
-		cout << "Excellent" << endl;
-	else if (final_score_whole > 80)
-		cout << "Well Done" << endl;
-	else if (final_score_whole > 70)
-		cout << "Good" << endl;
-	else if (final_score_whole < 60)
-		cout << "Fail" << endl;
-	else
-		cout << "Need Improvement" << endl;
+        if (final_score_whole >= 90)
+                cout << "Excellent" << endl;
+        else if (final_score_whole >= 80)
+                cout << "Well Done" << endl;
+        else if (final_score_whole >= 70)
+                cout << "Good" << endl;
+        else if (final_score_whole < 60)
+                cout << "Fail" << endl;
+        else
+                cout << "Need Improvement" << endl;
 	return 0;
 }
 
