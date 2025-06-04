@@ -1,4 +1,5 @@
-//Lab5.cpp prints a bar graph of 24 temperatures to both a text file (barGraph.txt) and the console window
+//Lab5.cpp prints a bar graph of 24 temperatures to both a text file
+// (Lab5/barGraph.txt) and the console window
 //CSIS 111-02
 
 //Include statements
@@ -12,13 +13,14 @@ using namespace std;
 
 int main(){
 	cout << "HaiDang Phan -- Lab 5" << endl;
-	cout << "Bar Graph also printed to text file (barGraph.txt)"<<endl<<endl;
+        cout << "Bar Graph also printed to text file (Lab5/barGraph.txt)"<<endl<<endl;
 
 	//I have read and understood the lab submittal policy
 
 	ifstream input;
 	ofstream output;
-	output.open("barGraph.txt");
+        // Output written to Lab5/barGraph.txt when run from repository root
+        output.open("Lab5/barGraph.txt");
 	//variable declarations
 	int temp;
 	int stars;
@@ -27,7 +29,8 @@ int main(){
 	int countSpace;
 
 	//printing the header and scale
-	input.open("tempData.txt");
+        // Input temperatures read from Lab5/tempData.txt
+        input.open("Lab5/tempData.txt");
 	output << "Temperatures for 24 hours:" << endl
 		 << "    -30        0         30        60        90        120" << endl
 		 << "     |---------|---------|---------|---------|---------|" << endl;
